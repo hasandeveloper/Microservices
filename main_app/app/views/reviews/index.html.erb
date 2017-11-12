@@ -1,0 +1,11 @@
+<h2>Listing Reviews</h2>
+<ul>
+	<% @reviews.each do |review| %>
+		<li>
+			<p><b>Title : </b><%= link_to review["title"], review_path(review["id"]) %></p>
+			<p><b>Body : </b><%= review["body"] %></p>
+			<p><b>Rating : </b><%= review["rating"] %></p>
+		</li>
+	<% end %>
+</ul>
+

@@ -1,0 +1,9 @@
+<h2>Listing Products</h2>
+<ul>
+	<% @products.each do |product| %>
+		<li>
+			<p><b> Name : </b><%= link_to product["name"], product_path(product["id"]) %></p>
+			<p><b> Price : </b><%= product["price"] %></p>
+		</li>
+	<% end %>
+</ul>
