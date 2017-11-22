@@ -7,5 +7,5 @@
 		<li><%= link_to product["name"], product_path(product["id"]) %></li>
 	<% end %>
 </ul>
-
+<%= link_to "Edit", edit_category_path(@category["id"]) %> <br/>
 <%= link_to "List Categories", categories_path %>

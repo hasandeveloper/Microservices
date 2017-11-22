@@ -10,6 +10,11 @@ class CategoriesController < ApplicationController
 		end
 	end
 
+	# def edit
+	# 	@category = Category.find(params[:id])
+	# 	render json: @category
+	# end
+
 	def update
 		@category = Category.find(params[:id])
 		if @category.update_attributes(category_params)
@@ -17,6 +22,10 @@ class CategoriesController < ApplicationController
 		else
 			render json: {errors: @category.errors.full_messages}
 		end
+	end
+
+	def show
+		@category = Category.find(params[:id])
 	end
 
 	def destroy

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-
+  get 'categories/post'
+  post'categories/category'
   devise_for :users
   resources :categories
   resources :products

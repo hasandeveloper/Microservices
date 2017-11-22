@@ -5,26 +5,11 @@ class ProductsController < ApplicationController
 	def new
 		@product = Product.new
 		render json: @product
-
-		# @product.name = params[:name]
-		# @product.save
-
-		puts "came here"
-		puts "params: #{params}"
-		# if @product.save
-		# 	render json: @product
-		# else
-		# 	render json: { errors: @product.errors.full_messages }
-		# end
 	end
 	
 	def create
-		@product = Product.new
-		# product = {}
-		# product.name = params[:name]
-		# product.price = params[:price]
-		# product.category_id = params[:category_id]
-		# product.save
+		@product = Product.new(product_params)
+		#binding.pry
 		if @product.save
 			render json: @product
 		else

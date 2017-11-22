@@ -1,0 +1,10 @@
+<h2>Edit Category</h2>
+
+<%= form_tag(("/categories/#{params["id"]}"), method: :patch) do %>
+	
+	<label>Category : </label> <br/>
+	<%= text_field_tag :name, @category["name"] %> <br/>
+
+	<%= submit_tag "Submit" %>
+<% end %>
+

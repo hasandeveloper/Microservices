@@ -3,11 +3,13 @@
 <% else %>
 	<h2>Listing Categories</h2>
 	<ul>
-		<% @categories.each do |cat| %>
+		<% @categories.each do |category| %>
 			<li>
-				<b>Name : </b><%= cat["name"] %>
-				<%= link_to "Show", category_path(cat["id"]) %>
+				<b>Name : </b><%= link_to category["name"], category_path(category["id"]) %>
+				<%#= link_to "Show", category_path(category["id"]) %>
 			</li>
 		<% end %>
 	</ul>
 <% end %>
+
+<%= link_to "Add Category", new_category_path %>

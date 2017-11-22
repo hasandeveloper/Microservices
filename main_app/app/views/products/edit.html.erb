@@ -1,0 +1,13 @@
+<h2>Edit Product</h2>
+
+<%= form_tag(("/products/#{params["id"]}"), method: :patch) do %>
+	<label>Name : </label> <br/>
+	<%= text_field_tag :name, @product["name"] %> <br/>
+
+	<label>Price : </label> <br/>
+	<%= text_field_tag :price, @product["price"] %> <br/>
+
+	<%= select_tag "category_id", options_for_select(@categories.collect {|category| [category["name"], category["id"]]}) %> <br/>
+
+	<%= submit_tag "submit" %>
+<% end %>

@@ -1,0 +1,13 @@
+<h2>Add Product</h2>
+
+<%= form_tag(products_path, method: :post) do %>
+	<label>Name : </label> <br/>
+	<%= text_field_tag :name %> <br/>
+
+	<label>Price : </label> <br/>
+	<%= text_field_tag :price %> <br/>
+
+	<%= select_tag "category_id", options_for_select(@categories.collect {|category| [category["name"], category["id"]]}) %> <br/>
+
+	<%= submit_tag "submit" %>
+<% end %>
